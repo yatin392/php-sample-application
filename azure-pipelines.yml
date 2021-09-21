@@ -22,10 +22,10 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)\$(Build.BuildId)'
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory).zip'
     replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
