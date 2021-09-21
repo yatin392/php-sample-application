@@ -9,6 +9,16 @@ trigger:
 pool:
   Default
 
+- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+
+
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
