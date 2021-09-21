@@ -9,16 +9,6 @@ trigger:
 pool:
   Default
 
-- task: VSTest@2
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\*test*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'
-
-
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
@@ -27,6 +17,15 @@ variables:
 steps:
 - task: NuGetToolInstaller@1
 
+- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
