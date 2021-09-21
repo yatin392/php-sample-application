@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  Default
+  Azure Pipelines
 
 steps:
 - script: echo Hello, world!
