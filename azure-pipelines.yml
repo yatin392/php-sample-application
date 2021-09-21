@@ -27,6 +27,6 @@ steps:
     publishLocation: 'Container'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(system.ArtifactStagingDirectory)'
+    SourceFolder: '$(system.defaultworkingdirectory)'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
