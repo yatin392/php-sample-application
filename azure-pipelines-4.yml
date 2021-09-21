@@ -27,9 +27,11 @@ steps:
     TaskNameSelector: 'SqlTaskFile'
     SqlFile: 'sql'
     ServerName: 'localhost'
+    SqlUsername: 'yatin'
+    SqlPassword: 'Yatin@yatin1'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(system.currentworkingdirectory)'
+    SourceFolder: '$(system.defaultworkingdirectory)'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
